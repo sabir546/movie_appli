@@ -72,9 +72,9 @@ const Home = ({ searchTerm }) => {
         </div>
 
         {/* Pagination Controls */}
-        <div className="flex justify-center items-center mt-6">
+        <div className="flex justify-start sm:justify-center items-center mt-6 mb-3">
           <button
-            className="px-4 py-2 mx-1 bg-gray-800 text-white rounded hover:bg-gray-600"
+            className="px-2 py-1 mx-1 sm:px-4 sm:py-2  mb:mx-1 bg-gray-800 text-white rounded hover:bg-gray-600"
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
           >
@@ -83,7 +83,7 @@ const Home = ({ searchTerm }) => {
           {[...Array(totalPages)].map((_, index) => (
             <button
               key={index}
-              className={`px-4 py-2 mx-1 ${
+              className={`px-2 py-1 mx-1 sm:px-4 sm:py-2  mb:mx-1 ${
                 currentPage === index + 1
                   ? "bg-blue-500 text-white"
                   : "bg-gray-800 text-white"
@@ -94,7 +94,7 @@ const Home = ({ searchTerm }) => {
             </button>
           ))}
           <button
-            className="px-4 py-2 mx-1 bg-gray-800 text-white rounded hover:bg-gray-600"
+            className="px-2 py-1  mx-1 sm:px-4 sm:py-2  mb:mx-.5 bg-gray-800 text-white rounded hover:bg-gray-600"
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
